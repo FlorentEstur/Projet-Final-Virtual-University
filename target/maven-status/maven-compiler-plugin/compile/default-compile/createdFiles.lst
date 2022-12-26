@@ -1,1 +1,5 @@
+org\mycompany\process\ProcessInsert.class
+org\mycompany\model\Cours.class
+org\mycompany\repository\ICoursRepository.class
+org\mycompany\model\ListeCours.class
 org\mycompany\Application.class
