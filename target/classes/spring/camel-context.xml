@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       https://camel.apache.org/schema/spring/camel-spring-2.23.3.xsd">
+    <bean class="org.mycompany.process.JaxBUnmarshallBDD" id="_Unmarshall"/>
+    <bean class="org.mycompany.process.SaveToBDD" id="_Save"/>
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <route id="_route1">
             <from id="_from1" uri="file:support?noop=true"/>
@@ -17,6 +19,10 @@
         <route id="_route4">
             <from id="_from4" uri="file:correction-finies?noop=true"/>
             <to id="_to4" uri="file:correction-pour-eleves"/>
+        </route>
+        <route id="_route5">
+            <from id="_from5" uri="file:TestTransfoXML?noop=true"/>
+            <process id="_XMLversObjet" ref="_Unmarshall"/>
         </route>
     </camelContext>
 </beans>

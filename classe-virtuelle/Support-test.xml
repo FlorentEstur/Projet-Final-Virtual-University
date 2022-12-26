@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Cours>
+<cours>
 	<intitule>
 		<id_matiere>BIO1</id_matiere>
 		<id_cours>FLORA1</id_cours>
@@ -9,4 +9,4 @@
 		<enseignant>M. Pissenlit</enseignant>
 		<support>Insérer votre support ici !</support>
 	</description>
-</Cours>
+</cours>
