@@ -47,18 +47,6 @@ public class Messagerie {
 		} while (choix == 1);
 	}
 	
-//	@GetMapping("/receptionQuestion")
-//	public void consumerQuestion() {
-//		String consume = (String) consumerTemplate.receiveBody("activemq:queue:Florent_Question_Etudiant");
-//		System.out.println(consume);
-//	}
-	
-//	@GetMapping("/receptionReponse")
-//	public void consumerReponse() {
-//		String consume = (String) consumerTemplate.receiveBody("activemq:queue:Florent_Reponse_Prof");
-//		System.out.println(consume);
-//	}
-	
 	@GetMapping("/listenerQuestion")
 	public void listenerQuestion() throws Exception {
 		ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://194.206.91.85:61616");
