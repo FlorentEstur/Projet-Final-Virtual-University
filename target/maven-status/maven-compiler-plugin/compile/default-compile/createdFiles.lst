@@ -1,3 +1,5 @@
+org\mycompany\Messagerie.class
+org\mycompany\listener\Listener.class
 org\mycompany\process\JaxBUnmarshallBDD.class
 org\mycompany\process\CrashTest.class
 org\mycompany\repository\ISupportCoursRepository.class
