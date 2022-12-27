@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<liste_cours>
+    <cours>
+        <id_matiere>BIO1</id_matiere>
+        <id_cours>FLORA1</id_cours>
+        <titre>La flore dans tous ses états</titre>
+        <enseignant>M. Pissenlit</enseignant>
+        <support>Insérer votre support ici !</support>
+    </cours>
+    <cours>
+        <id_matiere>BIO2</id_matiere>
+        <id_cours>FLORA2</id_cours>
+        <titre>La flore dans tous ses états 2</titre>
+        <enseignant>M. Pissenlit</enseignant>
+        <support>Insérer votre support ici !</support>
+    </cours>
+    <cours>
+        <id_matiere>CHM1</id_matiere>
+        <id_cours>CARBO1</id_cours>
+        <titre>La polyvalence du carbone</titre>
+        <enseignant>M. Charbon</enseignant>
+        <support>Insérer votre support ici !</support>
+    </cours>
+</liste_cours>
