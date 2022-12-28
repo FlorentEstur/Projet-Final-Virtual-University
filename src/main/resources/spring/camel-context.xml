@@ -1,10 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       https://camel.apache.org/schema/spring/camel-spring-2.23.3.xsd">
+    <bean class="org.mycompany.process.JaxBUnmarshallBDD" id="_Unmarshall"/>
+    <bean class="org.mycompany.process.CrashTest" id="_List"/>
+    <bean class="org.apache.activemq.camel.component.ActiveMQComponent" id="activemq">
+        <property name="brokerURL" value="tcp://194.206.91.85:61616"/>
+        <property name="username" value="admin"/>
+        <property name="password" value="adaming2022"/>
+    </bean>
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <route id="_route1">
             <from id="_from1" uri="file:support?noop=true"/>
             <to id="_to1" uri="file:classe-virtuelle"/>
+        </route>
+        <route id="_route2">
+            <from id="_from2" uri="file:examen?noop=true"/>
+            <to id="_to2" uri="file:examen-eleve"/>
+        </route>
+        <route id="_route3">
+            <from id="_from3" uri="file:examen-fini?noop=true"/>
+            <to id="_to3" uri="file:correction-a-faire"/>
+        </route>
+        <route id="_route4">
+            <from id="_from4" uri="file:correction-finies?noop=true"/>
+            <to id="_to4" uri="file:correction-pour-eleves"/>
+        </route>
+        <route id="_route5">
+            <from id="_from5" uri="file:TestTransfoXML?noop=true"/>
+            <process id="_XMLversObjet" ref="_Unmarshall"/>
+        </route>
+        <route id="_route6">
+            <from id="_from6" uri="file:TestTransfoListXML"/>
+            <process id="_XMLToListBDD" ref="_List"/>
+        </route>
+        <route id="_route7">
+            <from id="_from7" uri="direct:question"/>
+            <log id="_log1" message="&quot;test envoie question ${body}&quot;"/>
+            <to id="_to6" uri="activemq:queue:Florent_Question_Etudiant"/>
+            <log id="_log2" message="test envoie ${body}"/>
+        </route>
+        <route id="_route8">
+            <from id="_from8" uri="direct:reponse"/>
+            <to id="_to5" uri="activemq:queue:Florent_Reponse_Prof"/>
         </route>
     </camelContext>
 </beans>

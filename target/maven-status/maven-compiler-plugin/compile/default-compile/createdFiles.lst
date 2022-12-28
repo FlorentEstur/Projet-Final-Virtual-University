@@ -1,1 +1,9 @@
+org\mycompany\Messagerie.class
+org\mycompany\listener\Listener.class
+org\mycompany\process\JaxBUnmarshallBDD.class
+org\mycompany\process\CrashTest.class
+org\mycompany\repository\ISupportCoursRepository.class
+org\mycompany\model\SupportCours.class
+org\mycompany\model\ListeCours.class
 org\mycompany\Application.class
+org\mycompany\process\RecupDepuisBDD.class
