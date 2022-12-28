@@ -2,11 +2,12 @@ package org.mycompany;
 
 import java.util.Scanner;
 
-import javax.jms.*;
-
+import javax.jms.Connection;
+import javax.jms.Destination;
+import javax.jms.MessageConsumer;
+import javax.jms.Session;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.camel.ConsumerTemplate;
 import org.apache.camel.ProducerTemplate;
 import org.mycompany.listener.Listener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,6 @@ public class Messagerie {
 
 	@Autowired
 	ProducerTemplate producerTemplate;
-	@Autowired
-	ConsumerTemplate consumerTemplate;
 	Scanner scan = new Scanner(System.in);
 	int choix;
 	
